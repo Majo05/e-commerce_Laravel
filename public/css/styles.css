@@ -1,0 +1,180 @@
+/* Kitchening
+============================ */
+
+@import 'reset.css';
+
+
+/* Generales */
+body {
+  font-family: sans-serif;
+}
+.container{
+  margin:20px auto;
+  /* quizas hay un conflicto aqui */
+  margin-top: 20px;
+}
+.min-height{
+  min-height: 400px;
+}
+
+p {
+  font-size: 20px;
+  color: #666;
+}
+
+h4{
+  text-align: center;
+  margin-top: 40px;
+}
+
+p{
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+/* esto es de preguntas frecuentes */
+.card{
+    text-decoration: none;
+}
+
+/* Cabecera */
+.logo{
+  width: 35%;
+}
+
+.carousel1{
+  margin-top: 100px;
+}
+
+.nav-contenido{
+  font-size: 14px;
+}
+/* Banner */
+
+.oferta-mes{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.descripcion-carousel{
+  text-align: center;
+  margin-top: 70px;
+}
+
+.btn{
+  margin-top: 15px;
+}
+
+/* Kitchening
+============================ */
+
+/* Resets */
+*{
+  box-sizing: border-box;
+}
+ul, ol{
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Generales */
+body {
+  font-family: sans-serif;
+}
+
+section{
+  margin-top: 60px;
+}
+
+p{
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 10px;
+  color: #666;
+}
+
+h4{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo{
+  width: 35%;
+}
+
+.nav-contenido{
+  font-size: 14px;
+}
+
+.carousel1{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/* seccion oferta */
+
+.seccion-centrada{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btn{
+  margin-top: 15px;
+}
+
+/* seccion productos*/
+.img-fluid{
+  margin-top: 20px;
+}
+
+.img-productos{
+  position: relative;
+}
+
+.ver-producto{
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0.5);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+#accordion{
+min-height: 430px;
+}
+
+.fondo-mensaje {
+  background-color: rgba(255, 116, 35, 0.9);
+  color:white;
+}
+.fondo-mensaje a {
+  color:white;
+  text-decoration: underline;
+}
+@media (min-width:414px) {
+    .descripcion-carousel{
+        margin-top: 50px;
+    }
+
+    .seccion-productos{
+      margin-top: 30px;
+    }
+}
