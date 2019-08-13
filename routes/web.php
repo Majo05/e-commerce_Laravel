@@ -14,9 +14,14 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+Route::get('/index', 'HomeController@index');
 
-Route::get('/login', 'LoginController@view');
+//Route::get('/login', 'LoginController@view');
 
-Route::get('/register', 'RegisterController@view');
+//Route::get('/register', 'RegisterController@view');
 
 Route::get('/faq', 'FaqController@view');
+//Route::get('/register', function(){
+
+//  return view('auth.register');
+//});

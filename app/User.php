@@ -10,13 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'lastname', 'email', 'password', 'avatar', 'type', 'nroDoc', 'phone', 'address','role_id'
     ];
 
     /**
@@ -36,4 +37,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+  public function type(){
+	return $this->belongsTo('App\Type', 'type');
+}
+
+
 }

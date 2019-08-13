@@ -67,10 +67,6 @@ p{
   margin-top: 15px;
 }
 
-/* Kitchening
-============================ */
-
-/* Resets */
 *{
   box-sizing: border-box;
 }
@@ -157,6 +153,7 @@ h4{
   top: 50%;
   left: 50%;
 }
+
 #accordion{
 min-height: 430px;
 }
