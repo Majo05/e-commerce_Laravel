@@ -38,10 +38,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+/*
   public function type(){
 	return $this->belongsTo('App\Type', 'type');
+}*/
+
+public function types()
+{
+   return $this->belongsTo(Type::class, 'doctype_id');
 }
 
+public function roles()
+{
+   return $this->belongsTo(Role::class, 'role_id');
+}
 
 }

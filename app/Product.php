@@ -10,3 +10,20 @@ class Product extends Model{
     public $timestamps = false;
   protected $guarded = [];
 }
+
+
+
+public function categories()
+{
+   return $this->belongsTo(Category::class, 'category_id');
+}
+
+public function sales()
+{
+   return $this->belongsToMany(Sale::class, 'saledetails');
+}
+
+public function orders()
+{
+   return $this->belongsToMany(Order::class, 'orderdetails');
+}

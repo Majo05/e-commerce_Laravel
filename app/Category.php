@@ -9,3 +9,9 @@ class Category extends Model{
     public $timestamps = false;
     protected $guarded = [];
 }
+
+
+public function products()
+{
+    return $this->hasMany(Product::class);
+}
