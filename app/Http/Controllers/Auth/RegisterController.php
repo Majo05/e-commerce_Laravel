@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
+    protected $redirectTo = '/faqs';
 
     /**
      * Create a new controller instance.
@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'avatar' => ['required'],
-            'type' => ['required'],
+            'doctype_id' => ['required'],
             'nroDoc' => ['required', 'numeric'],
             'phone' => ['required', 'numeric'],
             'address' => ['required', 'string', 'max: 255']
@@ -84,13 +84,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $path = $data['avatar'];
+
+
+        if (!is_null($path)) {
+        $filename = $path->store('public/avatars');
+        $dbFilename = explode('/',$filename);
+        $filename = $dbFilename[2];
+    }
+
+
         return User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => $data['avatar']->store(),
-            'type' => $data['type'],
+            'avatar' => $filename,
+            'doctype_id' => $data['doctype_id'],
             'nroDoc' => $data['nroDoc'],
             'phone' => $data['phone'],
             'address' => $data['address'],
@@ -105,8 +116,8 @@ class RegisterController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
-    protected function registered(Request $request, $user)
+  /*  protected function registered(Request $request, $user)
     {
-        return redirect('/');
-    }
+        return redirect('/faqs');
+    }*/
 }

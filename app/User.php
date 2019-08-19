@@ -17,7 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname', 'email', 'password', 'avatar', 'type', 'nroDoc', 'phone', 'address','role_id'
+        'name', 'lastname', 'email', 'password', 'avatar', 'doctype_id', 'nroDoc', 'phone', 'address','role_id'
+
     ];
 
     /**
@@ -38,14 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-/*
+
   public function type(){
 	return $this->belongsTo('App\Type', 'type');
-}*/
-
-public function types()
-{
-   return $this->belongsTo(Type::class, 'doctype_id');
 }
 
 public function roles()

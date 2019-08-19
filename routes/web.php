@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/index', 'HomeController@index');
 
 //Route::get('/login', 'LoginController@view');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout' );
 
 //Route::get('/register', 'RegisterController@view');
 

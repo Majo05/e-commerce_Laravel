@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 
 @section('contenido')
@@ -56,8 +55,8 @@
                         </div>
 
                         <div  class="form-group col-4 offset-4">
-                            <label for="type">Tipo de Documento</label>
-                              <select class="form-control" name="type">
+                            <label for="doctype_id">Tipo de Documento</label>
+                              <select class="form-control" name="doctype_id">
                               @foreach($types as $type)
                               <option value="{{$type->id}}">{{$type->name}}</option>
                               @endforeach
