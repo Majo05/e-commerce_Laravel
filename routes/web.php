@@ -21,7 +21,8 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout' );
 
 //Route::get('/register', 'RegisterController@view');
 
-Route::get('/faq', 'FaqController@view');
+//Route::get('/faq', 'FaqController@view');
+Route::get('/questions', 'QuestionController@index');
 //Route::get('/register', function(){
 
 //  return view('auth.register');
