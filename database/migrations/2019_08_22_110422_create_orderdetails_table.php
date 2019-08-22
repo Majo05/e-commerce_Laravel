@@ -18,7 +18,7 @@ class CreateOrderdetailsTable extends Migration
             $table->integer('user_id');
             $table->integer('product_id');
             $table->timestamps();
-            $table->primary(['sale_id', 'user_id','product_id']);
+            $table->primary(['order_id', 'user_id','product_id']);
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
         });
