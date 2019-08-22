@@ -1,21 +1,9 @@
 <?php
-/*
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class FaqController extends Controller
-{
-    public function view(){
-        return view('faq');
-    }
-}
-*/
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Faq;
+use App\Question;
 
 class questionController extends Controller
 {
@@ -36,7 +24,7 @@ class questionController extends Controller
      */
     public function index()
     {
-        $faqs = Faq::paginate(6);
-        return view('views.faq')->with('faqs',$faqs);
+        $questions = Question::paginate(6);
+        return view('questions.home')->with('questions',$questions);
     }
 }

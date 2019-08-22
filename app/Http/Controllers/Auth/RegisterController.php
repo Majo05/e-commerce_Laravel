@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/faqs';
+    protected $redirectTo = '/index';
 
     /**
      * Create a new controller instance.
@@ -118,6 +118,6 @@ class RegisterController extends Controller
      */
   /*  protected function registered(Request $request, $user)
     {
-        return redirect('/faqs');
+        return redirect('/index');
     }*/
 }
