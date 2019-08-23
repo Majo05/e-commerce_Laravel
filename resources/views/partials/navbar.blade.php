@@ -52,8 +52,9 @@
                   <section class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <img src="/storage/avatars/{{(Auth::user()->avatar)}}" class="avatar" id="avatar-navbar">
                       <h6>Hola, <a>{{ Auth::user()->name }}</a></h6>
+                      <a class="dropdown-item" href="/profile">{{ __('Perfil') }}</a>
                       <a class="dropdown-item" href="{{ route('logout') }}">
-                          {{ __('Logout') }}</a>
+                          {{ __('Cerrar sesion') }}</a>
                   </section>
 
                 </li>

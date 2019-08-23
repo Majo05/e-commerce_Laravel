@@ -1,3 +1,24 @@
+## Instalar
+
+```
+php artisan migrate
+
+// O para borrar y crear de 0 la db
+php artisan migrate:fresh
+
+// popular los registros de doctype y roles
+php artisan db:seed
+
+// Acceder publicamente a storage (para los avatars)
+php artisan storage:link
+```
+
+## Correr app
+```
+php artisan serv
+```
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -70,3 +91,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+

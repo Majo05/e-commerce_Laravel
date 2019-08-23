@@ -19,7 +19,8 @@ Route::get('/index', 'HomeController@index');
 //Route::get('/login', 'LoginController@view');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout' );
 
-//Route::get('/register', 'RegisterController@view');
+Route::get('/profile', 'ProfileController@view');
+Route::post('/profile/update', 'ProfileController@update');
 
 //Route::get('/faq', 'FaqController@view');
 Route::get('/questions', 'QuestionController@index');

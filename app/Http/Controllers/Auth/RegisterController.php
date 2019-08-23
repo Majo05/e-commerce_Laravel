@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use App\Type;
 use App\Http\Controllers\Controller;
+use App\Type;
+use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -20,7 +20,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -41,7 +41,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-
     /**
      * Show the application registration form.
      *
@@ -50,7 +49,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         return view('auth.register', [
-          'types' => Type::all(),
+            'types' => Type::all(),
         ]);
     }
 
@@ -68,11 +67,10 @@ class RegisterController extends Controller
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' => ['required'],
             'doctype_id' => ['required'],
             'nroDoc' => ['required', 'numeric'],
             'phone' => ['required', 'numeric'],
-            'address' => ['required', 'string', 'max: 255']
+            'address' => ['required', 'string', 'max: 255'],
         ]);
     }
 
@@ -85,28 +83,31 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $path = $data['avatar'];
-
+        $path = isset($data['avatar']) ? $data['avatar'] : null;
 
         if (!is_null($path)) {
-        $filename = $path->store('public/avatars');
-        $dbFilename = explode('/',$filename);
-        $filename = $dbFilename[2];
-    }
+            $filename = $path->store('public/avatars');
+            $dbFilename = explode('/', $filename);
+            $filename = $dbFilename[2];
+        }
 
-
-        return User::create([
+        $user  = [
             'name' => $data['name'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => $filename,
             'doctype_id' => $data['doctype_id'],
             'nroDoc' => $data['nroDoc'],
             'phone' => $data['phone'],
             'address' => $data['address'],
-            'role_id'=>2
-        ]);
+            'role_id' => 2,
+        ];
+
+        if(isset($filename)) {
+            $user['avatar'] = $filename;
+        }
+
+        return User::create($user);
     }
 
     /**
@@ -116,8 +117,8 @@ class RegisterController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
-  /*  protected function registered(Request $request, $user)
-    {
-        return redirect('/index');
-    }*/
+    /*  protected function registered(Request $request, $user)
+{
+return redirect('/index');
+}*/
 }
