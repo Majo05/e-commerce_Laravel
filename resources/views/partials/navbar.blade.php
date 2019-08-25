@@ -5,7 +5,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5">
-      <a class="navbar-brand" href="/index"><img src="css/images/logoDH860-01.png" class="logo"></a>
+      <a class="navbar-brand" href="/index"><img src="{{asset('css/images/logoDH860-01.png')}}" class="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,11 +29,13 @@
           @else
               @if (Auth::User()->role_id == 1)
 
-              <li class="nav-item">
-                <a class="nav-link" href="/index">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/faq">FAQ</a>
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ __('Administrar') }}<span class="caret"></span>
+                  </a>
+                  <section class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{route('products.index')}}">{{ __('Productos') }}</a>
+                  </section>
               </li>
 
               @endif
@@ -77,5 +79,5 @@
         </ul>
       </div>
     </nav>
-
+<br><br><br><br>
   </header>

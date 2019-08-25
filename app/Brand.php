@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model{
-    protected $table = 'categories';
-  //  public $timestamps = false;
-    protected $guarded = [];
+class Brand extends Model
+{
+  protected $table = 'brands';
+//  public $timestamps = false;
+  protected $guarded = [];
+    //
 
     public function products()
     {
         return $this->hasMany(Product::class);
     }
-
 }
