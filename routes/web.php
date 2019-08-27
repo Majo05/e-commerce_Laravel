@@ -40,9 +40,12 @@ Route::get('/eliminar/{id}', 'ProductController@destroy');
 //  return view('auth.register');
 //});
 
+Route::get('/viewAllProducts', 'HomeController@index2');
+Route::get('/detailProducts/{id}', 'HomeController@show');
+
 // Aquí es donde controlo lo del carrito de compras, agregar productos
-Route::get('cart/add/{id}', "CartController@add")->name('cart.add')->middleware('auth');
+Route::post('order/add/{id}', "OrderController@add")->name('order.add')->middleware('auth');
 //Carrito de compras elimino productos
-Route::get('cart/remove/{id}', "CartController@remove")->name('cart.remove')->middleware('auth');
+Route::get('order/remove/{id}', "OrderController@remove")->name('order.remove')->middleware('auth');
 //Muestro los productos del carrito
-Route::get('/cart', 'CartController@show')->name('cart')->middleware('auth');
+Route::get('/order', 'OrderController@show')->name('order')->middleware('auth');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Order;
 use Illuminate\Http\Request;
 
@@ -47,6 +48,7 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+        return view('order');
     }
 
     /**
@@ -82,4 +84,29 @@ class OrderController extends Controller
     {
         //
     }
+
+    public function add($id)
+      {
+        $product =  Product::find($id);
+        $product = [
+              'id' => $product->id,
+              "name" => $product->name,
+              'description' => $product->description,
+              'category_id' => $product->category_id,
+              'price' => $product->price,
+              'image' => $product->image,
+        ];
+
+         session()->put("user.order." . $id, $product);
+
+
+         return view('order');
+      }
+
+      public function remove($id)
+      {
+          session()->pull('user.order.' . $id, "default");
+          return view('order');
+      }
+
 }

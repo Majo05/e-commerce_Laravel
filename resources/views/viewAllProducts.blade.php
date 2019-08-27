@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+@extends('layouts.master')
+@section('assets')
     <script src="https://code.jquery.com/jquery-2.x-git.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/products_css.css">
     <title></title>
-  </head>
-  <body>
-    @section('content')
+@endsection
+
+@section('contenido')
     <div class="container">
       <div class="bg-primary text-center col-md-12">
         <p class="lead text-white">PRODUCTOS</p>
@@ -28,13 +26,13 @@
                               <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo11/images/img-8.jpg">-->
                           </a>
                           <ul class="social">
-                              <li><a href="{{route('front.product.show',$product->id)}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                              <li><a href="{{route('cart.add',$product->id)}}" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                              <li><a href="/detailProducts/{{$product->id}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                              <li><a href="{{route('order.add',$product->id)}}" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                           </ul>
                       </div>
                       <div class="product-content">
-                          <h3 class="title"><a href="{{route('front.product.show',$product->id)}}">{{$product->name}}</a></h3>
-                          <div class="price"> $ {{$product->price}}></div>
+                          <h3 class="title"><a href="/detailProducts/{{$product->id}}">{{$product->name}}</a></h3>
+                          <div class="price"> $ {{$product->price}}</div>
                       </div>
                   </div>
               </div>
@@ -47,6 +45,4 @@
      @endforelse
     </div>
     <hr>
-    @endsection
-  </body>
-</html>
+@endsection
