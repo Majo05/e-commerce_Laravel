@@ -15,10 +15,16 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->datetime('date');
             $table->decimal('amount', 8, 2);
-            $table->integer('pay_type_id');
+          
+            $table->unsignedBigInteger('pay_type_id');
+            $table->foreign('pay_type_id')->references('id')->on('paytypes');
+
             $table->timestamps();
           //  $table->primary(['id', 'user_id', 'date']);
             $table->charset = 'utf8mb4';

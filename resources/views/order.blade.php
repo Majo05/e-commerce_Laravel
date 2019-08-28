@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
-@section('content')
+@section('contenido')
 
 <div class="container col-10">
     <section class="row">
@@ -42,7 +42,7 @@
                       @endphp
 
                       <tr>
-                          <td><img src="{{asset($product['image'])}}" width="10%"/> </td>
+                          <td><img src="/storage/products/{{asset($product['image'])}}" width="10%"/> </td>
                           <td class="initialism">{{$product['name']}}</td>
                           <td class="">{{$product['description']}}</td>
                           <td >In stock</td>

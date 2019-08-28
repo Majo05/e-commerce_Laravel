@@ -67,22 +67,22 @@
         <h6 class="text-uppercase font-weight-bold">Productos</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a class="text-muted" href="#!">Sillones</a>
+          <a class="text-muted" href="/viewAllProducts/1">Sillones</a>
         </p>
         <p>
-          <a class="text-muted" href="#!">Sillas</a>
+          <a class="text-muted" href="/viewAllProducts/2">Sillas</a>
         </p>
         <p>
-          <a class="text-muted" href="#!">Almohadones</a>
+          <a class="text-muted" href="/viewAllProducts/3">Almohadones</a>
         </p>
         <p>
-          <a class="text-muted" href="#!">Acolchados</a>
+          <a class="text-muted" href="/viewAllProducts/4">Acolchados</a>
         </p>
         <p>
-          <a class="text-muted" href="#!">Alfombras</a>
+          <a class="text-muted" href="/viewAllProducts/5">Alfombras</a>
         </p>
         <p>
-          <a class="text-muted" href="#!">Cortinas</a>
+          <a class="text-muted" href="/viewAllProducts/6">Cortinas</a>
         </p>
 
       </div>
@@ -95,16 +95,16 @@
         <h6 class="text-uppercase font-weight-bold">SITIO</h6>
         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <a class="text-muted" href="home.php">Home</a>
+          <a class="text-muted" href="/index">Home</a>
         </p>
         <p>
-          <a class="text-muted" href="register.php">Registro</a>
+          <a class="text-muted" href="{{ route('register') }}">Registro</a>
         </p>
         <p>
-          <a class="text-muted" href="login.php">Login</a>
+          <a class="text-muted" href="{{ route('login') }}">Login</a>
         </p>
         <p>
-          <a class="text-muted" href="frecuentes.php">FAQ</a>
+          <a class="text-muted" href="/faq">FAQ</a>
         </p>
 
       </div>
@@ -144,6 +144,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </footer>
 <!-- Footer -->
+
 
 </body>
 </html>

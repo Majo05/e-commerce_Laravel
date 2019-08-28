@@ -17,7 +17,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Faq;
 
-class questionController extends Controller
+class FaqController extends Controller
 {
     /**
      * Create a new controller instance.

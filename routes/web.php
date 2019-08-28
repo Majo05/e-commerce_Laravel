@@ -49,3 +49,5 @@ Route::post('order/add/{id}', "OrderController@add")->name('order.add')->middlew
 Route::get('order/remove/{id}', "OrderController@remove")->name('order.remove')->middleware('auth');
 //Muestro los productos del carrito
 Route::get('/order', 'OrderController@show')->name('order')->middleware('auth');
+
+Route::get('/viewAllProducts/{category_id}','CategoryController@index')->name('category');

@@ -22,7 +22,7 @@
                   @endif
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/faq">{{ __('FAQs') }}</a>
+                  <a class="nav-link" href="/questions">{{ __('FAQs') }}</a>
               </li>
           @else
               @if (Auth::User()->role_id == 1)
@@ -39,44 +39,47 @@
               @endif
 
               <li class="nav-item">
-                <a class="nav-link" href="/viewAllProducts">Home</a>
+                <a class="nav-link" href="/index">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/faq">FAQ</a>
+                  <a class="nav-link" href="/viewAllProducts">Productos</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/questions">FAQ</a>
               </li>
               <li class='nav-item'>
                   <a class='nav-link' href={{route('order')}}><i class="fas fa-shopping-cart"></i></a>
               </li>
-              <li class="nav-item dropdown">
+          <!--
+            <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Small button
+                  </button>
+                  <div class="dropdown-menu">
+                    ...
+                  </div>
+                </div>
+              -->
+       
+              
+              
+                <li class="nav-item dropdown">
 
                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                       {{ __('Mi Cuenta') }} <span class="caret"></span>
                   </a>
                   <section class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <img src="/storage/avatars/{{(Auth::user()->avatar)}}" class="avatar" id="avatar-navbar">
-                      <h6>Hola, <a>{{ Auth::user()->name }}</a></h6>
-                      <a class="dropdown-item" href="/profile">{{ __('Perfil') }}</a>
-                      <a class="dropdown-item" href="{{ route('logout') }}">
+                      <h6 class="dropdown-header"><strong>Hola, <a>{{ Auth::user()->name }}</strong></a></h6>
+                      <a class="dropdown-item dropdown-header" href="/profile">{{ __('Perfil') }}</a>
+                      <a class="dropdown-item dropdown-header" href="{{ route('logout') }}">
                           {{ __('Cerrar sesion') }}</a>
                   </section>
 
                 </li>
 
     @endguest
-<!--
-          <li class="nav-item">
-            <a class="nav-link" href="/index">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/register">Registro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/faq">FAQ</a>
-          </li>
-        -->
+
         </ul>
       </div>
     </nav>

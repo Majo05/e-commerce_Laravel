@@ -76,52 +76,59 @@
 </div>
     </section>
 
+    <h4>Nuestros Productos</h4>
+
     <section class="row seccion-productos">
+
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-sillones.jpg" class="img-fluid" alt="pdto 01">
-          <a class="ver-producto" href="#">SILLONES</a>
+          <a class="ver-producto" href="/viewAllProducts/1">SILLONES</a>
         </div>
       </article>
 
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-sillas.jpg" class="img-fluid" alt="pdto 01">
-          <a class="ver-producto" href="#">SILLAS</a>
+          <a class="ver-producto" href="/viewAllProducts/2">SILLAS</a>
         </div>
       </article>
 
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-almohadones.jpg" class="img-fluid" alt="pdto 01">
-          <a class="ver-producto" href="#">ALMOHADONES</a>
+          <a class="ver-producto" href="/viewAllProducts/3">ALMOHADONES</a>
         </div>
       </article>
 
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-acolchados.jpg"  class="img-fluid" alt="pdto 01">
-          <a class="ver-producto" href="#">ACOLCHADOS</a>
+          <a class="ver-producto" href="/viewAllProducts/4">ACOLCHADOS</a>
         </div>
       </article>
 
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-alfombras.jpg"  class="img-fluid"  alt="pdto 01">
-          <a class="ver-producto" href="#">ALFOMBRAS</a>
+          <a class="ver-producto" href="/viewAllProducts/5">ALFOMBRAS</a>
         </div>
       </article>
 
       <article class="col-xs-12 col-md-6 col-lg-6">
         <div class="img-productos">
           <img src="css/images/seccion3-cortinas.jpg"  class="img-fluid" alt="pdto 01">
-          <a class="ver-producto" href="#">CORTINAS</a>
+          <a class="ver-producto" href="/viewAllProducts/6">CORTINAS</a>
         </div>
       </article>
 
     </section>
-
+    <div class="text-center mt-3">
+    <a href="/viewAllProducts"><button type="button" class="btn btn-outline-secondary btn-default">Ver Todos</button></a>
+    </div>
   </div>
+  
+
   <br>
   <br>
   <br>

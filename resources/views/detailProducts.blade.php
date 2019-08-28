@@ -18,7 +18,7 @@
       <div class="container-fliud">
         <div class="wrapper row">
           <div class="col-md-6">
-              <img class="image_detailProduct" src="{{$product->image}}" />
+              <img src="/storage/products/{{$product->image}}" />
           </div>
           <div class="details col-md-6">
             <h3 class="product-title">{{$product->name}}</h3>

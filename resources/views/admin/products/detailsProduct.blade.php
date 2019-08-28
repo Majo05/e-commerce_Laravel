@@ -9,7 +9,9 @@
   	<div class="rowRegisterProd">
   <div class="container-left col-md-3">
     <div class="contact-info">
-      <i class="fa fa-cubes"></i>
+      <div class="col-md-6">
+        <img src="/storage/products/{{$detalle->image}}" />
+    </div>
       <h2>Detalle producto</h2>
     </div>
   </div>

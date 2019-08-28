@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
+use App\Faq;
 
 class questionController extends Controller
 {
@@ -24,7 +24,7 @@ class questionController extends Controller
      */
     public function index()
     {
-        $questions = Question::paginate(6);
+        $questions = Faq::paginate(6);
         return view('questions.home')->with('questions',$questions);
     }
 }
