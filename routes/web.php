@@ -47,6 +47,7 @@ Route::get('/detailProducts/{id}', 'HomeController@show');
 Route::get('order/add/{id}', 'OrderController@add')->name('carrito.add')->middleware('auth');
 Route::get('order', 'OrderController@index')->name('carrito')->middleware('auth');
 Route::get('order/remove/{id}', 'OrderController@remove')->name('order.remove')->middleware('auth');
+Route::get('order/flush', 'OrderController@flush')->name('order.remove')->middleware('auth');
 //Route::get('cart/add/{id}', "CartController@add")->name('cart.add')->middleware('auth');
 /*
 Route::group(['prefix' => 'carrito'], function() {

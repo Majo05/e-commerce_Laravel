@@ -147,5 +147,12 @@ class OrderController extends Controller
        }
      }
 
+     public function flush(Request $request)
+    {
+        //Método que permite eliminar todos los productos del carrito
+        $request->session()->flush();
+        return redirect('/viewAllProducts');
+    }
+
 
 }

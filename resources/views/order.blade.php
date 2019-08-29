@@ -45,7 +45,7 @@
                         <tr>
                          <td data-th="Foto">
                            <div class="row">
-                           <div class="col-sm-2 hidden-xs"><img src="{{asset('storage/'.$product->image)}}" alt="..." class="img-responsive" />
+                           <div class="col-sm-2 hidden-xs"><img src="{{asset('storage/products'.$product->image)}}" alt="..." class="img-responsive" />
                              </div>
                          <td data-th="Producto / Descripcion">
                            <div class="row">
@@ -75,7 +75,7 @@
 
                     <tfoot>
                       <tr>
-                        <td><button type="submit"><a href="carrito/flush" class="btn btn-warning"><i class="fa fa-angle-left"></i> Vaciar</a></button></td>
+                        <td><button type="submit"><a href="order/flush" class="btn btn-warning"><i class="fa fa-angle-left"></i> Vaciar</a></button></td>
                         <td colspan="4" class="hidden-sm"></td>
                         <td class="hidden-sm text-center">$ {{$total}} </td>
                         <td><a href="/carrito/checkout" class="btn btn-success btn-block">Comprar <i class="fa fa-angle-right"></i></a></td>

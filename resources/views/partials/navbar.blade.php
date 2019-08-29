@@ -38,7 +38,7 @@
 
               @endif
 
-              <li class="nav-link">
+              <li class="nav-item">
                 <a class="nav-link" href={{asset("/order")}}>Carrito<i class="fas fa-shopping-cart">({{ isset(session('carrito')['products']) ? count(session('carrito')['products']) : 0 }})</i></a>
               </li>
 
