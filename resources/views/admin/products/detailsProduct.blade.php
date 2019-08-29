@@ -9,10 +9,11 @@
   	<div class="rowRegisterProd">
   <div class="container-left col-md-3">
     <div class="contact-info">
-      <div class="col-md-6">
-        <img src="/storage/products/{{$detalle->image}}" />
-    </div>
       <h2>Detalle producto</h2>
+      <div class="col-md-6 wrapper row">
+        <img src="/storage/products/{{$detalle->image}}"/>
+    </div>
+
     </div>
   </div>
   <div class="container-rigth col-md-9">

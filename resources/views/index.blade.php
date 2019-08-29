@@ -70,7 +70,7 @@
         <p>Sillon tapizado en tela chenille color gris. Posee una estructura interna de madera maciza Saligna encolada, clavada y recubierta por espuma de alta densidad.</p>
         <h6><strong>Medidas:</strong> 65x65.</h6>
         <h6><strong>Tapizado:</strong> Pana Importada.</h6>
-        <button type="button" class="btn btn-light">Comprar</button>
+        <a><button type="button" class="btn btn-light">Agregar al Carrito</button>
   </div>
   </article>
 </div>
@@ -127,7 +127,7 @@
     <a href="/viewAllProducts"><button type="button" class="btn btn-outline-secondary btn-default">Ver Todos</button></a>
     </div>
   </div>
-  
+
 
   <br>
   <br>

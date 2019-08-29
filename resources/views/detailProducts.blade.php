@@ -36,7 +36,7 @@
             <h5 class="price-product">Precio: <span>$ {{$product->price}}</span></h4>
 
             <h5 class="colors">Marca:
-              <span class="" data-toggle="tooltip" title="Not In store"> {{$product->brand['name']}}</span>
+              <span class="" data-toggle="tooltip" title="Not In store"> {{$miMarca->name}}</span>
             </h5>
             <div class="">
               <button class="btn_productDetail" type="submit">Agregar al carrito<span class="fa fa-shopping-cart"></span></button>

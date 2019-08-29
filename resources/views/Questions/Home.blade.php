@@ -1,23 +1,26 @@
 @extends('layouts.master')
 @section('contenido')
 <div class="container">
-  
-        <h1 style="margin-top:65px;">Preguntas Frecuentes</h1>
+
+
         <div id="accordion">
           <div class="card">
             <div class="card-header" id="headingOne">
+<div class="card-body">
               <ul>
               <h5 class="mb-0">
-      
+Preguntas Frecuentes</div>
+</h5>
+</div>
+
                 <li>
                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                   aria-controls="collapseOne">
-      
+
                 </button>
                 </li>
-              
-              </h5>
-            </div>
+
+
             @foreach ($questions as $key => $value)
             <div class="card">
                     <div class="card-header" id="headingTwo">
@@ -36,7 +39,7 @@
                       </div>
                     </div>
                   </div>
-            
+
                   @endforeach
 
 
