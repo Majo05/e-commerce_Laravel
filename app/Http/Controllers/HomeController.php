@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
     public function index2(){
-        $products = Product::orderBy('name')->paginate(6);
+        $products = Product::orderBy('name')->paginate(8);
         return view('viewAllProducts', compact('products'));
         //, compact('products','categories','brands'));
     }

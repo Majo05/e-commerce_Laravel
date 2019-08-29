@@ -34,6 +34,8 @@
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="/detailProducts/{{$product->id}}">{{$product->name}}</a></h3>
+                      <div class="description"> {{$product->description}}</div>
+                      <div class="description"> Dimensiones :{{$product->dimension}}</div>
                     <div class="price"> $ {{$product->price}}</div>
                 </div>
             </div>

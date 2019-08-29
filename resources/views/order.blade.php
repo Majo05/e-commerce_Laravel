@@ -16,15 +16,17 @@
     <section class="row">
 
         <article class="col-12">
-            <br>
             <section class="table-responsive">
                 <table class="table table-striped">
+
+                  {{-- @dd($product); --}}
+                  @if (session()->get('carrito.products'))
                     <thead>
 
                         <tr>
                           <th style="width:5%">Foto</th>
-                          <th style="width:50%">Descripcion</th>
-                          <th style="width:10%">Stock</th>
+                          <th style="width:50%">Descripción</th>
+                        <!--  <th style="width:10%">Stock</th> -->
                           <th style="width:8%">Cantidad</th>
                           <th style="width:10%">Precio</th>
                           <th style="width:22%" class="text-center">Subtotal</th>
@@ -32,8 +34,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                      {{-- @dd($product); --}}
-                      @if (session()->get('carrito.products'))
+
                         @php
                           $itemSession = 0;
                           $total = 0;
@@ -54,7 +55,7 @@
                              </div>
                            </div>
                          </td>
-                         <td data-th="Stock">{{$product->stock_id}}</td>
+                         <!--<td data-th="Stock">{{$product->stock_id}}</td>-->
                          <td data-th="Cantidad">
                           <input id="quantity" type="number" class="form-control text-center" value="1">
                          </td>
