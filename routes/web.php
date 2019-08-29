@@ -41,6 +41,7 @@ Route::get('/eliminar/{id}', 'ProductController@destroy');
 //});
 
 Route::get('/viewAllProducts', 'HomeController@index2');
+Route::get('/viewAllProducts/{category_id}','CategoryController@index')->name('category');
 Route::get('/detailProducts/{id}', 'HomeController@show');
 
 
@@ -73,5 +74,5 @@ Route::get('order/remove/{id}', "OrderController@remove")->name('order.remove')-
 //Muestro los productos del carrito
 Route::get('/order/{user_id?}', 'OrderController@show')->name('order')->middleware('auth');
 
-Route::get('/viewAllProducts/{category_id}','CategoryController@index')->name('category');
+
 */

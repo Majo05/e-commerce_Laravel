@@ -46,6 +46,7 @@
 
         @endforelse
     </div>
+    {{$products->links()}}
 </div>
 <hr>
 @endsection

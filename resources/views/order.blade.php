@@ -44,9 +44,8 @@
                         @endphp
                         <tr>
                          <td data-th="Foto">
-                           <div class="row">
-                           <div class="col-sm-2 hidden-xs"><img src="{{asset('storage/products'.$product->image)}}" alt="..." class="img-responsive" />
-                             </div>
+                            <img src="{{asset('storage/products/'.$product->image)}}" alt="..." class="img-responsive" />
+                         </td>
                          <td data-th="Producto / Descripcion">
                            <div class="row">
                              <div class="col-sm-10">
