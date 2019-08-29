@@ -1,5 +1,5 @@
 window.onload=function(){
-  
+
   let formulario = document.querySelector('.form');
   let errorName = document.getElementById('errorName');
   let errorLastName = document.getElementById('errorLastName');
@@ -10,7 +10,7 @@ window.onload=function(){
   let errorAvatar = document.getElementById('errorAvatar');
   let errorPassword = document.getElementById('errorPassword');
   let errorRePassword = document.getElementById('errorRePassword');
-   
+
   console.log(formulario.elements);
   formulario.elements.name.focus();
   //Esta es la función que valida todos los campos del formulario
@@ -24,12 +24,12 @@ window.onload=function(){
       formulario.submit();
     }
   }
-  
-  
-  
-  
+
+
+
+
   function validateRegisterForm() {
-    
+
     console.log(formulario.elements);
     let {name, lastname, email, unSelect, nroDoc, phone, address, avatar, password, password_confirmation, submit} = formulario.elements;
 
@@ -40,14 +40,14 @@ window.onload=function(){
     if (!validatePassword(password)) return false;
     if (!validatePasswordRepeat(password_confirmation)) return false;
     return true;
-    
-    
+
+
 
   }
 
     // Creamos la funcion validateEmail:
-    
-    
+
+
     function validateName(name) {
       if (name.value.length < 2){
         errorName.innerHTML = "Nombre de usuario no puede tener menos de 2 caracteres";
@@ -56,7 +56,7 @@ window.onload=function(){
         return false;
       } else {
         errorName.classList.remove('alert-danger');
-        name.classList.remove('is-invalid'); 
+        name.classList.remove('is-invalid');
         name.classList.add('is-valid');
         formulario.elements.lastname.focus();
         return true;
@@ -71,24 +71,24 @@ window.onload=function(){
         return false;
       } else {
         errorLastName.classList.remove('alert-danger');
-        lastName.classList.remove('is-invalid'); 
+        lastName.classList.remove('is-invalid');
         lastName.classList.add('is-valid');
         formulario.elements.email.focus();
         return true;
       }
     }
-    
+
     function validateEmail(email) {
       let re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      
-      if (!re.test(email.value)){ 
-        email.classList.add('is-invalid'); 
+
+      if (!re.test(email.value)){
+        email.classList.add('is-invalid');
         errorEmail.innerHTML= "Debe colocar un email válido";
         return false;
       } else {
         errorEmail.innerHTML= "";
         errorEmail.classList.remove('alert-danger');
-        email.classList.remove('is-invalid'); 
+        email.classList.remove('is-invalid');
         email.classList.add('is-valid');
         // Hacemos foto en el siguiente input si está todo bien:
         formulario.elements.password.focus();
@@ -98,13 +98,13 @@ window.onload=function(){
 
     function validatePassword(password) {
       let re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/
-      
+
       if (!re.test(password.value)) {
         errorPassword.innerHTML = "La contraseña debe tener una Mayuscula, un numero y un minimo de 8 caracteres";
         errorPassword.classList.add('alert-danger');
         password.classList.add('is-invalid');
-        return false;  
-        
+        return false;
+
       } else {
         errorPassword.innerHTML = "";
         errorPassword.classList.remove('alert-danger');
@@ -114,27 +114,27 @@ window.onload=function(){
         return true;
       }
     }
-    
+
     function validatePasswordRepeat(password, repassWord){
       if (password.value != repassWord.value) {
         errorRePassword.innerHTML = "Las contraseñas no coinciden";
         errorRePassword .classList.add('alert-danger');
         repass.classList.add('is-invalid');
-        return false;  
-        
+        return false;
+
       } else {
         errorRePassword.innerHTML = "";
         errorRePassword.classList.remove('alert-danger');
         repass.classList.remove('is-invalid');
         repass.classList.add('is-valid');
-        
+
         return true;
-      }  
+      }
     }
 
-    
-  
+
+
 
   }
-  
+
   

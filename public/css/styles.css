@@ -11,6 +11,7 @@ body {
   margin-top: 20px;
 }
 .min-height{
+
   min-height: 400px;
 }
 
@@ -33,11 +34,6 @@ p{
 /* esto es de preguntas frecuentes */
 .card{
     text-decoration: none;
-}
-
-/* Cabecera */
-.logo{
-  width: 35%;
 }
 
 .carousel1{
@@ -100,7 +96,7 @@ h4{
 }
 
 .logo{
-  width: 35%;
+  max-width: 150px;
 }
 
 .nav-contenido{
@@ -153,7 +149,7 @@ h4{
 
 #avatar-navbar{
   vertical-align: middle;
-  
+
   width: 70px;
   height: 70px;
   border-radius: 50%;

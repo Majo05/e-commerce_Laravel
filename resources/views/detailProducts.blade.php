@@ -34,9 +34,7 @@
             </div>-->
             <p class="product-description">{{$product->description}}</p>
             <h5 class="price-product">Precio: <span>$ {{$product->price}}</span></h4>
-            <h5 class="sizes">Categoria:
-              <span class="size" data-toggle="tooltip" title="small">{{$product->category['name']}}</span>
-            </h5>
+
             <h5 class="colors">Marca:
               <span class="" data-toggle="tooltip" title="Not In store"> {{$product->brand['name']}}</span>
             </h5>

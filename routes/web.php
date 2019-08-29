@@ -24,6 +24,7 @@ Route::post('/profile/update', 'ProfileController@update');
 
 //Route::get('/faq', 'FaqController@view');
 Route::get('/questions', 'QuestionController@index');
+Route::get('/faqs', 'FaqController@index');
 //Route::get('/register', function(){
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {

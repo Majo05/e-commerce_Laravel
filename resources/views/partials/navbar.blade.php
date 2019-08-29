@@ -3,16 +3,28 @@
   <header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5">
-      <a class="navbar-brand" href="/index"><img src="{{asset('css/images/logoDH860-01.png')}}" class="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand logo" href="/index"><img src="{{asset('css/images/logoDH860-01.png')}}"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavSL" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNavSL">
-        <ul class="navbar-nav nav-contenido ml-auto"><!-- ml-auto genera margen izquierdo HASTA DONDE PUEDA -->
+        <ul class="navbar-nav nav-contenido ml-auto "><!-- ml-auto genera margen izquierdo HASTA DONDE PUEDA -->
 
 
           @guest
+          <li class="nav-item">
+              <a class="nav-link" href="/index">Home</a>
+            </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="/viewAllProducts">Productos</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/faqs/">{{ __('FAQs') }}</a>
+            </li>
+
               <li class="nav-item">
                   <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
               </li>
@@ -21,9 +33,7 @@
                       <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                   @endif
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/questions">{{ __('FAQs') }}</a>
-              </li>
+
           @else
               @if (Auth::User()->role_id == 1)
 
@@ -49,7 +59,7 @@
                   <a class="nav-link" href="/viewAllProducts">Productos</a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link" href="/questions">FAQ</a>
+                <a class="nav-link" href="/questions/">FAQ</a>
               </li>
           <!--
             <div class="btn-group">
@@ -61,8 +71,6 @@
                   </div>
                 </div>
               -->
-
-
 
                 <li class="nav-item dropdown">
 

@@ -24,10 +24,6 @@ class FaqController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -36,7 +32,7 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faqs = Faq::paginate(6);
-        return view('views.faq')->with('faqs',$faqs);
+        $questions = Faq::paginate(6);
+        return view('faq')->with('questions',$questions);
     }
 }
