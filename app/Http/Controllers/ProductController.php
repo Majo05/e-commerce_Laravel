@@ -110,9 +110,13 @@ namespace App\Http\Controllers;
       {
         $detalle = Product::find($id_product);
 
+        $detalleMarca = $detalle->marca_id;
+        $miMarca = Brand::find($detalleMarca);
+        
+
         //Aquí almaceno en una variable el detalle, sólo del registro seleccionado
         //Aquí retorno a la vista el detalle de la película seleccionada
-        return view('admin.products.detailsProduct')->with('detalle',$detalle);
+        return view('admin.products.detailsProduct')->with('detalle', $detalle)->with('miMarca', $miMarca);
       }
 
       /**
@@ -124,10 +128,20 @@ namespace App\Http\Controllers;
       public function edit($product_id)
       {
           //
+      
       $categories = Category::all();
       $brands = Brand::all();
+
       $product = Product::find($product_id);
-      return view('admin.products.editProduct',compact('product','brands','categories'));
+
+      $miProducto= $product->category_id;
+      $miCategoria = Category::find($miProducto);
+
+      $miProductoMarca = $product->marca_id;
+      $miMarca = Brand::find($miProductoMarca);
+      
+
+      return view('admin.products.editProduct',compact('product','brands','categories', 'miCategoria', 'miMarca'));
       }
 
       /**

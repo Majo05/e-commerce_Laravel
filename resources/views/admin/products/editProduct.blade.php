@@ -77,8 +77,13 @@
     				<div class="form-group">
     				  <label class="control-label col-sm-2" for="category_id">Categoría:</label>
     				  <div class="col-sm-10">
+
+                  
               <select class="form-control" name="category_id" id="category_id">
-                <option value="{{$product->category['id']}}" selected>{{$product->category['name']}}</option>
+               
+              <option value="{{$product->category}}" selected>
+                  {{$miCategoria->name}}
+              </option>
                   @foreach($categories as $category)
                       @if ($category->name != $product->category['name'])
                           <option value="{{$category->id}}">{{$category->name}}</option>
@@ -115,7 +120,12 @@
     				  <label class="control-label col-sm-2" for="marca_id">Marca: </label>
     				  <div class="col-sm-10">
               <select class="form-control" name="marca_id" id="marca_id">
-                <option value="{{$product->brand['id']}}" selected>{{$product->brand['name']}}</option>
+
+                 
+                  <option value="{{$product->marca_id}}" selected>
+                      {{$miMarca->name}}
+                  </option>
+
                   @foreach($brands as $brand)
                       @if ($brand->name != $product->brand['name'])
                           <option value="{{$brand->id}}">{{$brand->name}}</option>

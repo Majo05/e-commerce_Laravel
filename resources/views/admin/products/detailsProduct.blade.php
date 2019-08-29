@@ -27,9 +27,7 @@
                 <br>
                 STOCK: {{$detalle->stock}}
                 <br>
-                CATEGORIA: {{$detalle->category_id['name']}}
-                <br>
-                MARCA: {{$detalle->marca_id['name']}}
+                MARCA: {{$miMarca->name}}
             </div>
             <br>
             <a class="button_register" href="{{route('products.index')}}">Volver</a>
