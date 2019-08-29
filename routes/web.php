@@ -43,11 +43,34 @@ Route::get('/eliminar/{id}', 'ProductController@destroy');
 Route::get('/viewAllProducts', 'HomeController@index2');
 Route::get('/detailProducts/{id}', 'HomeController@show');
 
+
+Route::get('order/add/{id}', 'OrderController@add')->name('carrito.add')->middleware('auth');
+Route::get('order', 'OrderController@index')->name('carrito')->middleware('auth');
+Route::get('order/remove/{id}', 'OrderController@remove')->name('order.remove')->middleware('auth');
+//Route::get('cart/add/{id}', "CartController@add")->name('cart.add')->middleware('auth');
+/*
+Route::group(['prefix' => 'carrito'], function() {
+    //Esta muestra todos los productos del carrito
+    Route::get('/', 'OrderController@index')->name('carrito');
+    //Esta permite adicionar un nuevo producto al carrito
+    Route::get('/add/{product_id}', 'OrderController@add')->name('carrito.add');
+    //Esta borra un producto del carrito
+    Route::delete('/remove/{product_id}', 'OrderController@remove')->name('carrito.remove');
+    //Esta ruta nos conduce a la forma de pago del cliente ya que acepta la compra
+    Route::get('/checkout', 'OrderController@checkout')->name('carrito.checkout');
+    //Esta ruta nos permite borar todos los elementos del carrito, ya que lo estamos trabajando con session
+    Route::get('/flush', 'OrderController@flush')->name('carrito.flush');
+}
+);
+*/
+
+/*
 // Aquí es donde controlo lo del carrito de compras, agregar productos
 Route::post('order/add/{id}', "OrderController@add")->name('order.add')->middleware('auth');
 //Carrito de compras elimino productos
 Route::get('order/remove/{id}', "OrderController@remove")->name('order.remove')->middleware('auth');
 //Muestro los productos del carrito
-Route::get('/order', 'OrderController@show')->name('order')->middleware('auth');
+Route::get('/order/{user_id?}', 'OrderController@show')->name('order')->middleware('auth');
 
 Route::get('/viewAllProducts/{category_id}','CategoryController@index')->name('category');
+*/

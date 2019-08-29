@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/products.css">
 @endsection
 @section('contenido')
-<form method="POST" action="{{route('order.add',['id' => $product->id])}}" enctype="multipart/form-data" >
+<form method="get" action="{{route('carrito.add',['id' => $product->id])}}" enctype="multipart/form-data" >
   <!--@method('PUT')-->
   @csrf
 <!--<form method="POST" action="/detailsProduct/{id}" enctype="multipart/form-data" > -->

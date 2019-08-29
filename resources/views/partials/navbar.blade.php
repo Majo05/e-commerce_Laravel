@@ -38,6 +38,10 @@
 
               @endif
 
+              <li class="nav-link">
+                <a class="nav-link" href={{asset("/order")}}>Carrito<i class="fas fa-shopping-cart">({{ isset(session('carrito')['products']) ? count(session('carrito')['products']) : 0 }})</i></a>
+              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="/index">Home</a>
               </li>
@@ -46,9 +50,6 @@
                 </li>
               <li class="nav-item">
                 <a class="nav-link" href="/questions">FAQ</a>
-              </li>
-              <li class='nav-item'>
-                  <a class='nav-link' href={{route('order')}}><i class="fas fa-shopping-cart"></i></a>
               </li>
           <!--
             <div class="btn-group">
@@ -60,9 +61,9 @@
                   </div>
                 </div>
               -->
-       
-              
-              
+
+
+
                 <li class="nav-item dropdown">
 
                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

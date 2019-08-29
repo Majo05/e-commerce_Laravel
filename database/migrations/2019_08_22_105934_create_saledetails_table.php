@@ -17,15 +17,15 @@ class CreateSaledetailsTable extends Migration
             $table->increments('id');
 
             $table->timestamps();
-           
+
             $table->unsignedBigInteger('sale_id');
-            $table->foreign('sale_id')->references('id')->on('sales');
+        /*    $table->foreign('sale_id')->references('id')->on('sales');*/
 
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+        /*    $table->foreign('user_id')->references('id')->on('users');*/
 
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('product');
+        /*    $table->foreign('product_id')->references('id')->on('product');*/
 
             $table->integer('unit');
 

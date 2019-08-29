@@ -36,6 +36,4 @@ class Product extends Model{
      return $this->belongsTo(Brand::class, 'marca_id');
   }
 
-
-
 }

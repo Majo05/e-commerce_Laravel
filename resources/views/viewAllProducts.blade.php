@@ -29,7 +29,7 @@
                     </a>
                     <ul class="social">
                         <li><a href="/detailProducts/{{$product->id}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="{{route('order.add',$product->id)}}" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="{{route('carrito.add',$product->id)}}" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        
+
         @empty
         <div class='registroNoEncontrado col-12'>
             <h5 class='control-label'>No se encontraron resultados.</h5>
         </div>
-        
+
         @endforelse
     </div>
 </div>

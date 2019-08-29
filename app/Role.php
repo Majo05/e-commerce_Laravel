@@ -8,10 +8,10 @@ class Role extends Model{
     protected $table = 'roles';
   //  public $timestamps = false;
     protected $guarded = [];
-}
 
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
-public function users()
-{
-    return $this->hasMany(User::class);
 }

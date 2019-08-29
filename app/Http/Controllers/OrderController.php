@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Order;
+use Auth;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,6 +16,8 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $product = session('carrito.products');
+        return view('/order')->with('product', $product);
         //
     }
 
@@ -48,7 +51,8 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
-        return view('order');
+        $order = Order::where('user_id', Auth::User()->id);
+        return view('order')->with('order',$order);
     }
 
     /**
@@ -84,11 +88,11 @@ class OrderController extends Controller
     {
         //
     }
-
+/*
     public function add($id)
       {
         $product =  Product::find($id);
-        $product = [
+        $products = [
               'id' => $product->id,
               "name" => $product->name,
               'description' => $product->description,
@@ -97,16 +101,51 @@ class OrderController extends Controller
               'image' => $product->image,
         ];
 
-         session()->put("user.order." . $id, $product);
+      //   session()->put("user.order." . $id, $products);
 
 
-         return view('order');
+        // return view('order');
+
+         $order = new Order([
+           'user_id'  => Auth::User()->id,
+           'amount'   => 0, //$products->price,
+           //'image' => $request->input("image"),
+         //  'image' => 'storage/products/image-placeholder_1.png',
+         ]);
+
+
+
+          $order ->save();
+
+          return redirect()->route('order');
+
       }
+      */
+    public function add($id)
+       {
+           $product = collect(session('carrito.products'));
+           $product = Product::find($id);
+           $product[$product->id]=$product;
+           session()->push('carrito.products', $product);
+           $limit = 10;
+           $product = Product::make()->paginate($limit);
+           return redirect('/order');
+       }
 
-      public function remove($id)
-      {
-          session()->pull('user.order.' . $id, "default");
-          return view('order');
-      }
+     public function remove(Request $request, $id)
+     {
+       //Método que permite eliminar un producto del carrito
+       if(!count(session('carrito.products')) == 0) {
+         foreach(session('carrito.products') as $key => $product) {
+           if($product[$id]) {
+             $request->session()->pull('carrito.products.'.$key, 'default');
+             return redirect('/order');
+           }
+         }
+       } else {
+         return redirect('/viewAllProducts');
+       }
+     }
+
 
 }

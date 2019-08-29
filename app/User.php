@@ -49,4 +49,19 @@ public function roles()
    return $this->belongsTo(Role::class, 'role_id');
 }
 
+public function cart()
+  {
+  return $this->hasOne(Order::class);
+  }
+
+public function orders()
+{
+    return $this->hasMany(Order::class);
+}
+
+public function sales()
+{
+    return $this->hasMany(Sale::class);
+}
+
 }

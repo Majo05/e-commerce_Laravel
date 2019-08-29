@@ -14,7 +14,6 @@
 
 <div class="container col-10">
     <section class="row">
-        @if (session()->get('user.cart'))
 
         <article class="col-12">
             <br>
@@ -23,79 +22,74 @@
                     <thead>
 
                         <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Descripción </th>
-                        <!--    <th scope="col">Available</th> -->
-                            <th scope="col" class="text-center">Cantidad</th>
-                            <th scope="col" class="text-center">Precio</th>
-                            <th scope="col"></th>
+                          <th style="width:5%">Foto</th>
+                          <th style="width:50%">Descripcion</th>
+                          <th style="width:10%">Stock</th>
+                          <th style="width:8%">Cantidad</th>
+                          <th style="width:10%">Precio</th>
+                          <th style="width:22%" class="text-center">Subtotal</th>
+                          <th style="width:5%"></th>
                         </tr>
                     </thead>
                     <tbody>
-                      @php
-                        $total = 0;
-                      @endphp
-                      @foreach (session()->get('user.cart') as $product)
-                      @php
-                          $total = $total + $product['price']
-                      @endphp
+                      {{-- @dd($product); --}}
+                      @if (session()->get('carrito.products'))
+                        @php
+                          $itemSession = 0;
+                          $total = 0;
+                        @endphp
+                      @foreach (session()->get('carrito.products') as $product)
+                        @php
+                          $total = $total + $product->price;
+                        @endphp
+                        <tr>
+                         <td data-th="Foto">
+                           <div class="row">
+                           <div class="col-sm-2 hidden-xs"><img src="{{asset('storage/'.$product->image)}}" alt="..." class="img-responsive" />
+                             </div>
+                         <td data-th="Producto / Descripcion">
+                           <div class="row">
+                             <div class="col-sm-10">
+                               <h4 class="nomargin">{{$product->name}}</h4>
+                                 <p><{{$product->description}}</p>
+                             </div>
+                           </div>
+                         </td>
+                         <td data-th="Stock">{{$product->stock_id}}</td>
+                         <td data-th="Cantidad">
+                          <input id="quantity" type="number" class="form-control text-center" value="1">
+                         </td>
+                         <td data-th="Precio">{{$product->price}}</td>
+                         <td data-th="Subtotal" class="text-center">$ {{$total}}</td>
+                         <td class="actions" data-th="">
+                           <a href="/order/remove/{{$product->id}}"><button class="btn btn-danger btn-m">Delete</button></a>
+                         </td>
+                         @endforeach
+                     </tr>
 
-                      <tr>
-                          <td><img src="/storage/products/{{asset($product['image'])}}" width="10%"/> </td>
-                          <td class="initialism">{{$product['name']}}</td>
-                          <td class="">{{$product['description']}}</td>
-                          <td >In stock</td>
-                          <td><input id="quantity" class="form-control" type="number" value="1" /></td>
-                          <p id="errorQuantity"></p>
-                          <td class="text-right">$ {{$product['price']}}</td>
-                      <td class="text-right"><a href='{{route('cart.remove', $product['id'])}}' class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
-                      </tr>
-
-
-                      @endforeach
-
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Sub-Total</td>
-                        <td></td>
-                        <td class="text-right" id="subtotal">$ {{$total}}</td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><strong>Total</strong></td>
-                        <td></td>
                     <td class="total"></td>
                         <td></td>
 
-                        </tr>
+
                     </tbody>
+
+                    <tfoot>
+                      <tr>
+                        <td><button type="submit"><a href="carrito/flush" class="btn btn-warning"><i class="fa fa-angle-left"></i> Vaciar</a></button></td>
+                        <td colspan="4" class="hidden-sm"></td>
+                        <td class="hidden-sm text-center">$ {{$total}} </td>
+                        <td><a href="/carrito/checkout" class="btn btn-success btn-block">Comprar <i class="fa fa-angle-right"></i></a></td>
+                      </tr>
+                      @else
+                      <div class='container mb-5 mt-5'>
+                          <h2 class='text-center mb-5 mt-5'> Aún no ha agregado ningún producto al carrito </h2>
+                      </div>
+                      @endif
+                    </tfoot>
+
                 </table>
             </section>
         </article>
-        <section class="col mb-2">
-            <article class="row">
-                <section class="col-sm-12  col-md-6">
-                <a href='{{route('/viewAllProducts')}}' class="btn btn-block btn-light">Continuar comprando</a>
-                </section>
-                <section class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
-                </section>
-            </article>
-            <br>
-        </section>
-
-            @else
-            <div class='container mb-5 mt-5'>
-                <h2 class='text-center mb-5 mt-5'> Aún no ha agregado ningún producto al carrito </h2>
-            </div>
-            @endif
 
 </section>
 </div>

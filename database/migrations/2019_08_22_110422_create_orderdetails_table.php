@@ -17,17 +17,17 @@ class CreateOrderdetailsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('unit');
-
             
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+          /*    $table->foreign('user_id')->references('id')->on('users');
+            */
 
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+          /*  $table->foreign('order_id')->references('id')->on('orders');*/
 
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
-            
+            /*$table->foreign('product_id')->references('id')->on('products');*/
+
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
         });
